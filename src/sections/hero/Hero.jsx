@@ -10,6 +10,7 @@ import linkedinLight from '../../assets/linkedin-light.svg';
 import linkedinDark from '../../assets/linkedin-Dark.svg';
 import CV from '../../assets/MyResume.pdf'
 import { useTheme } from '../../common/ThemeContext';
+import { motion } from 'framer-motion';
 
 function Hero() {
   const {theme, toggleTheme} = useTheme();
@@ -21,11 +22,21 @@ function Hero() {
 
   return (
     <section id='hero' className={styles.container}>
-        <div className={styles.colorModeContainer}>
+        <motion.div 
+          initial={{x: 100, opacity: 0}}
+          whileInView={{x: 0, opacity: 1}}
+          transition={{duration: 1.8, delay: 0}}
+          className={styles.colorModeContainer}
+        >
             <img className={styles.hero} src={heroImg} alt="Profile picture of Sedem Amenyo" />
             <img onClick={toggleTheme} className={styles.colorMode} src={themeIcon} alt="Color mod icon" />
-        </div>
-        <div className={styles.info}>
+        </motion.div>
+        <motion.div 
+          initial={{x: -100, opacity: 0}}
+          whileInView={{x: 0, opacity: 1}}
+          transition={{duration: 2.8, delay: 0}}
+          className={styles.info}
+        >
           <h1>Amenyo <br /> Sedem</h1>
           <h2>Full-Stack Developer</h2>
           <span>
@@ -43,7 +54,7 @@ function Hero() {
           <a href={CV} download>
             <button className='hover'>Resume</button>
           </a>
-        </div>
+        </motion.div>
     </section>
   )
 }
