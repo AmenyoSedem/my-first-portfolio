@@ -7,7 +7,7 @@ import twitterDark from '../../assets/twitter-dark.svg';
 import githubLight from '../../assets/github-light.svg';
 import githubDark from '../../assets/github-dark.svg';
 import linkedinLight from '../../assets/linkedin-light.svg';
-import linkedinDark from '../../assets/linkedin-Dark.svg';
+import linkedinDark from '../../assets/linkedin-dark.svg';
 import CV from '../../assets/MyResume.pdf'
 import { useTheme } from '../../common/ThemeContext';
 import { motion } from 'framer-motion';
